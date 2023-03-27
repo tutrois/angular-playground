@@ -24,6 +24,7 @@ function CallToPhoneDuplo (phone: number|string): number | string {
 }
 
 /*  Funções Assync  */
+//Sempre que eu tiver uma função que é async, para declarar o retorno preciso declarar uma "Promise";
 async function getDatabase(id:Number) : Promise<String>{
     return "felipe";
 }
