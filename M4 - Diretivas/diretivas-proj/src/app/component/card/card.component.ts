@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
+import { FormControl } from '@angular/forms';
 
 @Component({
   selector: 'app-card',
@@ -7,6 +8,8 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CardComponent implements OnInit {
   produtos:string[] = [];
+  menuType:string = "asdasd";
+
   constructor() {
     this.produtos = [
       "mouse",
@@ -14,6 +17,7 @@ export class CardComponent implements OnInit {
       "Fonte",
       "Cabo"
   ]
+
    }
 
   ngOnInit(): void {
@@ -21,6 +25,9 @@ export class CardComponent implements OnInit {
 
   adicionar(): void{
     this.produtos.push("Arthur")
+  }
+  remover(index:number){
+    this.produtos.splice(index, 1)
   }
 
 }

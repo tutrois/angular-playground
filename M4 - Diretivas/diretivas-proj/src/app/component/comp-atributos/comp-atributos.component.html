@@ -1,0 +1,47 @@
+<!-- # Diretivas
+  O que é uma diretiva?
+  É um comando especial do Angular para chamar efeitos/comportamentos de script de maneira mais fácil
+-->
+
+<!-- ngClass: permite que eu consiga amarrar de forma dinamica
+   um atributo class do meu commponente.-->
+<p [ngClass]="stilo" >comp-atributos works!</p>
+<button (click)="trocar()">Trocar Cor</button>
+<hr>
+
+<!--
+  ngStyle: permite que eu amarre um atributo ou pedaço de
+   stylo a um atributo de class do meu componente
+-->
+<h1 [ngStyle]="{'background': corFundo}">Curso Angular</h1>
+<hr>
+<!-- ngModel: utilizamos a notação "Caixinha de banana".
+  Para utilizar precisa importar o Form no modulo em que o componente está sendo utilizado.
+
+  Conseguimos atribuir de foma dinamica a um atributo da class do componente.
+  Permitindo que tanto o TS como o HTML consiga interagir com o conteudo de uma variavel.
+-->
+<div>
+  <h1>Lista de Compras</h1>
+  <p>Adicione um item</p>
+  <input type="text" [(ngModel)]="item">
+  <button (click)="adicionarLista()"> Adicionar </button>
+  <p>{{item}}</p>
+</div>
+<div>
+  <ul>
+    <li *ngFor="let elemento of lista">{{elemento}}</li>
+  </ul>
+</div>
+
+<hr>
+<!-- nGTempate: Gera um componente com padrão ngIf = false.
+    Ou seja, só será renderizado se essa condução mudar.
+-->
+<ng-template [ngIf]="isEnabledBlock">
+  <a href="#">Teste ng-Template </a>
+</ng-template>
+<hr>
+
+<!-- ngContent: Pode renderizar componentes do componente pai para o componente filho-->
+<ng-content select="h1"></ng-content>
