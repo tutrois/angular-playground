@@ -1,0 +1,15 @@
+<!--
+  *ngIf é uma condição para mostrar ou não um componente. Por padrão ele inicia como true.
+    conseguimos também realizar isso via Data Biding -
+-->
+<app-card *ngIf="isAliveCard; else anotherBlock"></app-card>
+<!--
+  Conseguimos também criar um componente de template, utilizando o ngTemplate;
+    E atribuir ao ngIf em forma de condicional.
+    ng-Template é muito utilizado para deixar um callback para falha de renderização ou carregamento de tela.
+-->
+<ng-template #anotherBlock>
+  <p>Olá meu nome é bloco secreto</p>
+</ng-template>
+
+<router-outlet></router-outlet>

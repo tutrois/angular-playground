@@ -1,0 +1,18 @@
+<p>card works!</p>
+
+
+<!--
+  ngFor funcionar como o For da linguagem de programação, criando um tipo de laço de repetição
+  Pode ser aplicado com um objeto complexo.
+
+  Os itens no angular, funcionan de forma reativa, ou seja, a lista de produtos,
+  se tiver qualquer tipo de alteração, a lista é modificada.
+
+  Ou seja, ao implementar o botão de adicionar, com uma função no TS, foi possivel adicionar um item a lista.
+  e automaticamente a view é alterada e renderiza esse item na tela.
+  facilitando assim o processo de reatividade.
+-->
+<ul>
+  <li *ngFor="let p of produtos">{{ p }}</li>
+  <Button (click)="adicionar()">Adicionar</Button>
+</ul>
